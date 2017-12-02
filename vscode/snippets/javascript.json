@@ -1,0 +1,10 @@
+{
+	"Print to console": {
+		"prefix": "jmock",
+		"body": [
+			"jest.mock('${1:path}', () => ({$0}));"
+		],
+		"description": "Log output to console"
+	}
+
+}
