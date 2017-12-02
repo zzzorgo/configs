@@ -4,9 +4,11 @@
         "browser": true,
         "es6": true,
         "node": true
-    },
+    },    
+    "plugins": ["react"],
     "parserOptions": {
         "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
             "jsx": true
         },
         "sourceType": "module"
@@ -29,11 +31,7 @@
         "no-multi-spaces": "error",
         "space-before-function-paren": ["error", "never"],
         "space-before-blocks": ["error", "always"],
-        "space-unary-ops": [
-            "error", {
-              "words": true,
-              "nonwords": false
-        }],
+        "space-unary-ops": ["error", {"words": true, "nonwords": false }],
         "space-in-parens": ["error", "never"],
         "space-infix-ops": "error",
         "key-spacing": "error",
@@ -74,6 +72,23 @@
         "no-use-before-define": "error",
         "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
         "func-style": "error",
-        "no-unneeded-ternary": "warn"
+        "no-unneeded-ternary": "warn",
+        // eslint-plugin-react
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/sort-comp": ["warn", {
+            "order": [
+                "static-methods",
+                "lifecycle",
+                "everything-else",
+                "rendering"
+            ],
+            "groups": {
+                "rendering": [
+                    "/^render.+$/",
+                    "render"
+                ]
+            }
+        }]
     }
 }
