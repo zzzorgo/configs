@@ -9,5 +9,8 @@
     "editor.lineHeight": 19,
     "editor.tokenColorCustomizations": {
         "comments": "#747d86"
-    }
+    },
+    "files.eol": "\n",
+    "autoimport.doubleQuotes": false,
+    "window.zoomLevel": 0
 }

@@ -1,10 +1,44 @@
 {
-	"Print to console": {
+	"Jest.mock": {
 		"prefix": "jmock",
 		"body": [
 			"jest.mock('${1:path}', () => ({$0}));"
 		],
-		"description": "Log output to console"
-	}
-
+		"description": "Creates jest.mock()"
+	},
+	"Translate component props": {
+		"prefix": "transp",
+		"body": "const { translate } = ${0:this.}props;",
+		"description": "Get translate function for functional react components from props"
+	},
+	"Creacte functional component": {
+		"prefix": "funcc",
+		"body": [
+			"import React from 'react';",
+			"",
+			"const _${1:Component} = props => {",
+			"    return (",
+			"        <div>$0</div>",
+			"    );",
+			"};",
+			"",
+			"export const $1 = _$1;"
+		],
+		"description": "Creates file content for new functional react component with"
+	},
+	"Creacte translated functional component": {
+		"prefix": "funcct",
+		"body": [
+			"import React from 'react';",
+			"",
+			"const _${1:Component} = props => {",
+			"    const { translate } = props;",
+			"    return (",
+			"        <div></div>",
+			"    );",
+			"};",
+			"",
+			"export const $1 = configuredLocalize$0(_$1);"
+		],
+		"description": "Creates file content for new functional react component with translation"
 }
